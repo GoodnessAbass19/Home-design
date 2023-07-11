@@ -44,31 +44,31 @@ const Hero = () => {
   };
   let project = Images[index];
   return (
-    <div className="w-full flex flex-col items-center lg:flex-row lg:min-h-[70vh] lg:gap-0 gap-20">
+    <div className="w-full flex flex-col lg:flex-row min-h-[70vh] lg:gap-0 gap-20">
       <div className="basis-[60%] relative overflow-hidden">
         <img
           src={project.img}
           alt="img"
-          className="w-full h-full object-center object-fill"
+          className="w-full h-full object-center object-cover"
         />
-        <div className="flex justify-between items-center max-w-[200px] absolute bg-black right-0 bottom-0">
+        <div className="flex justify-between items-center absolute bg-black right-0 bottom-0 xl:hidden">
           <button
             onClick={handlePrevClick}
-            className="bg-black text-white hover:bg-gray-400 basis-1/2"
+            className="bg-black text-white hover:bg-gray-400/50 basis-1/2"
           >
             <ChevronLeftIcon className="md:w-16 md:h-16 w-6 h-6" />
           </button>
           <button
             onClick={handleNextClick}
-            className="bg-black text-white hover:bg-gray-400 basis-1/2"
+            className="bg-black text-white hover:bg-gray-400/50 basis-1/2"
           >
             <ChevronRightIcon className="md:w-16 md:h-16 w-6 h-6" />
           </button>
         </div>
       </div>
 
-      <div className="text-black text-2xl basis-[40%] flex flex-col justify-end items-start">
-        <div className="lg:px-32 flex flex-col gap-8 md:px-20 px-10">
+      <div className="text-black text-2xl basis-[40%] flex flex-col justify-center items-start overflow-hidden relative">
+        <div className="2xl:px-32 flex flex-col gap-8 md:px-20 lg:px-5 px-10">
           <h2 className="md:text-[40px] text-[28px] font-bold leading-snug">
             {project.title}
           </h2>
@@ -76,10 +76,25 @@ const Hero = () => {
 
           <a
             href="#"
-            className="text-xl font-semibold tracking-[0.3em] uppercase hover:text-black/50 flex items-center"
+            className="text-xl font-semibold tracking-[0.3em] uppercase hover:text-gray-400 flex items-center"
           >
             <span> shop now</span> <ArrowLongRightIcon className="w-32 h-10" />
           </a>
+        </div>
+
+        <div className="flex justify-between items-center bg-black absolute left-0 bottom-0 hidden xl:block">
+          <button
+            onClick={handlePrevClick}
+            className="bg-black text-white hover:bg-gray-400/50 basis-1/2"
+          >
+            <ChevronLeftIcon className="md:w-11 2xl:w-16 2xl:h-16 md:h-10 w-6 h-6" />
+          </button>
+          <button
+            onClick={handleNextClick}
+            className="bg-black text-white hover:bg-gray-400/50 basis-1/2"
+          >
+            <ChevronRightIcon className="md:w-11 2xl:w-16 2xl:h-16 md:h-10 w-6 h-6" />
+          </button>
         </div>
       </div>
     </div>
